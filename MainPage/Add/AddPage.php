@@ -52,12 +52,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
               <a href=""><li>Food List</li></a>
             </ul>
           </div>
+          <div class="copyRightSide"> 
+            <p>© 2024 Nathan Nguyen. Student ID: 217152695. <br>
+            All rights reserved. <br>
+            Website Created for ITEC3020 Program at York University</p>
+          </div>
         </div>
         <div class="rightPanel" style="display: flexbox">
           <div class="upper">
-            <a href="/PHPDependable/Logout.php" class="Logout" id="Logout"
-              >Logout</a
-            >
+            <div class="Logout"><a href="/PHPDependable/Logout.php" id="Logout">Logout</a></div>
           </div>
           <div class="mainContent">
             <form method="post">

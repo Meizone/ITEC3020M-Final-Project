@@ -29,14 +29,19 @@ $result = mysqli_query($con,$query);
             <a href="/MainPage/main.php"><li>Dashboard</li></a>
               <a href=""><li>Chart</li></a>
               <a href="/MainPage/Today/TodayList.php"><li>Today</li></a>
-              <a href="/MainPage/DashboardContents/FoodList.php"  style="color: white"><li>Food List</li></a>
+              <a href="/MainPage/DashboardContents/FoodList.php"><li style="color: white;">Food List</li></a>
             </ul>
+          </div>
+          <div class="copyRightSide"> 
+            <p>© 2024 Nathan Nguyen. Student ID: 217152695. <br>
+            All rights reserved. <br>
+            Website Created for ITEC3020 Program at York University</p>
           </div>
         </div>
         <div class="rightPanel">
           <div class="upper">
             <div class="UserLoc">Food List</div>
-            <a href="/PHPDependable/Logout.php" class="Logout" id="Logout"><div>Logout</div></a>
+            <div class="Logout"><a href="/PHPDependable/Logout.php" id="Logout">Logout</a></div>
           </div>
           <div style="display: flex; align-items: center; width: 100%; align-content: center; left:300px;"><a href="/MainPage/Add/AddPage.php" style="margin:auto;">Add New Item</a></div>
           <div class="mainContent">

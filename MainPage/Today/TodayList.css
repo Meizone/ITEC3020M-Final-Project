@@ -18,21 +18,18 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: gray;
-}
-
-.siteWrap {
   display: flex;
 }
 
 .sidePanel {
-  height: 90%;
+  height: 100%;
   width: 20%;
   margin: left;
   background-color: #132743;
 }
 
 .rightPanel {
-  height: 90%;
+  height: 100%;
   width: 80%;
   margin: right;
   background-color: white;
@@ -49,8 +46,26 @@ body {
 }
 
 .lowerSide {
-  height: 90%;
+  height: 72%;
   width: 100%;
+}
+
+.copyRightSide {
+  height: 10%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.copyRightSide p {
+  font: bold 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 14px;
+  height: 75px;
+  margin: 0px;
+  display: table-cell;
+  padding: 10px;
+  color: #f5f5f5;
+  text-align: center;
 }
 
 .navBar {
@@ -107,14 +122,13 @@ body {
   width: 100%;
   font-size: larger;
   text-decoration: none;
-
   display: flex;
   align-items: center;
   justify-content: right;
   margin-right: 10px;
 }
 
-.Logout:hover {
+.Logout a:hover {
   cursor: pointer;
   color: blue;
 }

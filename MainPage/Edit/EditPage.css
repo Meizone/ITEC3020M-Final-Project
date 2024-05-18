@@ -18,21 +18,18 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: white;
-}
-
-.siteWrap {
   display: flex;
 }
 
 .sidePanel {
-  height: 90%;
+  height: 100%;
   width: 20%;
   margin: left;
   background-color: #132743;
 }
 
 .rightPanel {
-  height: 90%;
+  height: 100%;
   width: 80%;
   margin: right;
   background-color: white;
@@ -42,15 +39,33 @@ body {
   height: 10%;
   width: 100%;
   font-size: 35px;
-  color: white;
+  color: gray;
   justify-content: center;
   margin-top: 30px;
   display: flex;
 }
 
 .lowerSide {
-  height: 90%;
+  height: 72%;
   width: 100%;
+}
+
+.copyRightSide {
+  height: 10%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.copyRightSide p {
+  font: bold 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 14px;
+  height: 75px;
+  margin: 0px;
+  display: table-cell;
+  padding: 10px;
+  color: #f5f5f5;
+  text-align: center;
 }
 
 .navBar {
@@ -85,9 +100,10 @@ body {
 }
 
 .upper {
+  margin-top: 5px;
   display: flex;
-  background-color: white;
-  height: 5%;
+  background-color: gray;
+  height: 4%;
   width: 97%;
   margin-left: 10px;
   border-radius: 10px;
@@ -106,14 +122,13 @@ body {
   width: 100%;
   font-size: larger;
   text-decoration: none;
-
   display: flex;
   align-items: center;
   justify-content: right;
   margin-right: 10px;
 }
 
-.Logout:hover {
+.Logout a:hover {
   cursor: pointer;
   color: blue;
 }

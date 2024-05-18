@@ -32,11 +32,16 @@ $result = mysqli_query($con,$query);
               <a href="/MainPage/DashboardContents/FoodList.php"><li>Food List</li></a>
             </ul>
           </div>
+          <div class="copyRightSide"> 
+            <p>© 2024 Nathan Nguyen. Student ID: 217152695. <br>
+            All rights reserved. <br>
+            Website Created for ITEC3020 Program at York University</p>
+          </div>
         </div>
         <div class="rightPanel">
           <div class="upper">
             <div class="UserLoc">Today List</div>
-            <a href="/PHPDependable/Logout.php" class="Logout" id="Logout"><div>Logout</div></a>
+            <div class="Logout"><a href="/PHPDependable/Logout.php" id="Logout">Logout</a></div>
           </div>
           <div class="mainContent">
             <table class="contentTable">

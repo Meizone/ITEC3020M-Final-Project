@@ -19,23 +19,28 @@ $user_data = check_login($con);
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
+    <div>
       <div class="siteWrap">
         <div class="sidePanel">
           <div class="upperSide">Diet Buddy</div>
           <div class="lowerSide">
             <ul class="navBar">
-              <a href="/MainPage/main.php" style="color: white"><li>Dashboard</li></a>
+              <a href="/MainPage/main.php"><li style="color: white;">Dashboard</li></a>
               <a href=""><li>Chart</li></a>
               <a href="/MainPage/Today/TodayList.php"><li>Today</li></a>
               <a href="/MainPage/DashboardContents/FoodList.php"><li>Food List</li></a>
             </ul>
           </div>
+          <div class="copyRightSide"> 
+            <p>© 2024 Nathan Nguyen. Student ID: 217152695. <br>
+            All rights reserved. <br>
+            Website Created for ITEC3020 Program at York University</p>
+          </div>
         </div>
         <div class="rightPanel">
           <div class="upper">
             <div class="UserLoc">Dashboard</div>
-            <a href="/PHPDependable/Logout.php" class="Logout" id="Logout">Logout</a>
+            <div class="Logout"><a href="/PHPDependable/Logout.php" id="Logout">Logout</a></div>
           </div>
           <div class="mainContent">
             <div class="card1"></div>
@@ -44,7 +49,6 @@ $user_data = check_login($con);
           </div>
         </div>
       </div>
-      <div class="bottomCopyright">Test</div>
     </div>
   </body>
 </html>
