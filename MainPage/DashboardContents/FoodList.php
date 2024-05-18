@@ -60,7 +60,7 @@ $result = mysqli_query($con,$query);
                   <td><?php echo $row['carb']; ?></td>
                   <td><?php echo $row['protein']; ?></td>
                   <td><a href="/MainPage/Edit/EditPage.php?id=<?php echo $row['food_id']; ?>">Edit</a></td>
-                  <td><a href="/PHPDependable/delete_item.php?id=<?php echo $row['food_id']; ?>">Delete</a></td>
+                  <td><a onclick="return confirm('Are you sure you would like to delete <?php echo $row['food_item']; ?> ')" href="/PHPDependable/delete_item.php?id=<?php echo $row['food_id']; ?>">Delete</a></td>
                 </tr>
                   <?php
                 }

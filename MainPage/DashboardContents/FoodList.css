@@ -17,7 +17,7 @@ body {
 .siteWrap {
   width: 100vw;
   height: 100vh;
-  background-color: white;
+  background-color: gray;
 }
 
 .siteWrap {
@@ -85,15 +85,13 @@ body {
 }
 
 .upper {
+  margin-top: 5px;
   display: flex;
-  background-color: white;
-  height: 5%;
+  background-color: gray;
+  height: 4%;
   width: 97%;
   margin-left: 10px;
   border-radius: 10px;
-}
-
-.mainContent {
 }
 
 .UserLoc {
@@ -117,7 +115,6 @@ body {
 }
 
 .Logout:hover {
-  width: fit-content;
   cursor: pointer;
-  color: gray;
+  color: blue;
 }

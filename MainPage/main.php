@@ -36,7 +36,7 @@ $user_data = check_login($con);
         <div class="rightPanel">
           <div class="upper">
             <div class="UserLoc">Dashboard</div>
-            <a href="/PHPDependable/Logout.php" class="Logout" id="Logout"><div>Logout</div></a>
+            <a href="/PHPDependable/Logout.php" class="Logout" id="Logout">Logout</a>
           </div>
           <div class="mainContent">
             <div class="card1"></div>
