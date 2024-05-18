@@ -6,18 +6,18 @@ include($_SERVER['DOCUMENT_ROOT'].'/PHPDependable/functions.php');
 
 check_login($con);
 
-$query = "select * from food_db";
+$id = $_SESSION['user_id'];
+
+$query = "select food_db.* from food_db, chart_db where '$id' = chart_db.user_id and food_db.food_id = chart_db.food_id";
 $result = mysqli_query($con,$query);
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="FoodList.css" />
+    <link rel="stylesheet" href="TodayList.css" />
   </head>
   <body>
     <div>
@@ -26,19 +26,18 @@ $result = mysqli_query($con,$query);
           <div class="upperSide">Diet Buddy</div>
           <div class="lowerSide">
             <ul class="navBar">
-            <a href="/MainPage/main.php"><li>Dashboard</li></a>
+              <a href="/MainPage/main.php"><li>Dashboard</li></a>
               <a href=""><li>Chart</li></a>
-              <a href="/MainPage/Today/TodayList.php"><li>Today</li></a>
-              <a href="/MainPage/DashboardContents/FoodList.php"  style="color: white"><li>Food List</li></a>
+              <a href="/MainPage/Today/TodayList.php" style="color: white"><li>Today</li></a>
+              <a href="/MainPage/DashboardContents/FoodList.php"><li>Food List</li></a>
             </ul>
           </div>
         </div>
         <div class="rightPanel">
           <div class="upper">
-            <div class="UserLoc">Food List</div>
+            <div class="UserLoc">Today List</div>
             <a href="/PHPDependable/Logout.php" class="Logout" id="Logout"><div>Logout</div></a>
           </div>
-          <div style="display: flex; align-items: center; width: 100%; align-content: center; left:300px;"><a href="/MainPage/Add/AddPage.php" style="margin:auto;">Add New Item</a></div>
           <div class="mainContent">
             <table class="contentTable">
               <tr>
@@ -46,13 +45,13 @@ $result = mysqli_query($con,$query);
                 <td>Fat (/100g)</td>
                 <td>Carbohydrate (/100g)</td>
                 <td>Protein (/100g)</td>
-                <td>Edit</td>
-                <td>Delete</td>
-                <td>Add to Today</td>
+                <td>Remove from Today</td>
               </tr>
               <tr>
                 <?php 
-                
+                $totalFat = 0;
+                $totalCarb = 0;
+                $totalPro = 0;
                 while($row = mysqli_fetch_assoc($result)) 
                 {
                   ?>
@@ -60,15 +59,25 @@ $result = mysqli_query($con,$query);
                   <td><?php echo $row['fat']; ?></td>
                   <td><?php echo $row['carb']; ?></td>
                   <td><?php echo $row['protein']; ?></td>
-                  <td><a href="/MainPage/Edit/EditPage.php?id=<?php echo $row['food_id']; ?>">Edit</a></td>
-                  <td><a onclick="return confirm('Are you sure you would like to delete <?php echo $row['food_item']; ?> ')" href="/PHPDependable/delete_item.php?id=<?php echo $row['food_id']; ?>">Delete</a></td>
-                  <td><a href="/PHPDependable/AddToday.php?id=<?php echo $row['food_id']; ?>">Add</a></td>
-                </tr>
+                  <td><a onclick="return confirm('Are you sure you would like to remove <?php echo $row['food_item']; ?> from today')" href="/PHPDependable/remove_item_today.php?id=<?php echo $row['food_id']; ?>">Remove From Today</a></td>
+                  <?php 
+                  $totalFat += $row['fat'];
+                  $totalCarb += $row['carb'];
+                  $totalPro += $row['protein'];
+                  ?>
 
+                </tr>
                   <?php
                 }
                 ?>
-              
+                <tr>
+                <td>Total</td>
+                <td><?php echo $totalFat; ?></td>
+                <td><?php echo $totalFat; ?></td>
+                <td><?php echo $totalPro; ?></td>
+                
+                <td><a onclick="return confirm('Are you sure you would like to clear today')" href="/PHPDependable/clear_today.php">Clear Today</a></td>
+                </tr>
             </table>
           </div>
         </div>

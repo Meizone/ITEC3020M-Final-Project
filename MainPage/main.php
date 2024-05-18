@@ -25,10 +25,10 @@ $user_data = check_login($con);
           <div class="upperSide">Diet Buddy</div>
           <div class="lowerSide">
             <ul class="navBar">
-              <a href=""><li>Dashboard</li></a>
+              <a href="/MainPage/main.php" style="color: white"><li>Dashboard</li></a>
               <a href=""><li>Chart</li></a>
-              <a href=""><li>Today</li></a>
-              <a href=""><li>Food List</li></a>
+              <a href="/MainPage/Today/TodayList.php"><li>Today</li></a>
+              <a href="/MainPage/DashboardContents/FoodList.php"><li>Food List</li></a>
             </ul>
           </div>
         </div>
