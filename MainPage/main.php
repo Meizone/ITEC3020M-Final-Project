@@ -19,7 +19,7 @@ $user_data = check_login($con);
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div>
+    <div class="container">
       <div class="siteWrap">
         <div class="sidePanel">
           <div class="upperSide">Diet Buddy</div>
@@ -44,6 +44,7 @@ $user_data = check_login($con);
           </div>
         </div>
       </div>
+      <div class="bottomCopyright">Test</div>
     </div>
   </body>
 </html>

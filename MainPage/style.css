@@ -4,7 +4,7 @@ body {
   padding: 0;
 }
 
-.siteWrap {
+.container {
   width: 100vw;
   height: 100vh;
   background-color: white;
@@ -12,17 +12,19 @@ body {
 
 .siteWrap {
   display: flex;
+  width: 100%;
+  height: 95%;
 }
 
 .sidePanel {
-  height: 90%;
+  height: 100%;
   width: 20%;
   margin: left;
   background-color: #132743;
 }
 
 .rightPanel {
-  height: 90%;
+  height: 100%;
   width: 80%;
   margin: right;
   background-color: gray;
@@ -36,6 +38,12 @@ body {
   justify-content: center;
   margin-top: 30px;
   display: flex;
+}
+
+.bottomCopyright {
+  height: 10%;
+  width: 100%;
+  background-color: #a9a9a9;
 }
 
 .lowerSide {
