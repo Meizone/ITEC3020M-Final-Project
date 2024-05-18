@@ -19,7 +19,6 @@ $user_data = check_login($con);
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <script src="main.js"></script>
     <div>
       <div class="siteWrap">
         <div class="sidePanel">

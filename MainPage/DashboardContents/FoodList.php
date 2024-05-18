@@ -20,7 +20,6 @@ $result = mysqli_query($con,$query);
     <link rel="stylesheet" href="FoodList.css" />
   </head>
   <body>
-    <script src="FoodList.js"></script>
     <div>
       <div class="siteWrap">
         <div class="sidePanel">
@@ -39,6 +38,7 @@ $result = mysqli_query($con,$query);
             <div class="UserLoc">Food List</div>
             <a href="/PHPDependable/Logout.php" class="Logout" id="Logout"><div>Logout</div></a>
           </div>
+          <div style="display: flex; align-items: center; width: 100%; align-content: center; left:300px;"><a href="/MainPage/Add/AddPage.php" style="margin:auto;">Add New Item</a></div>
           <div class="mainContent">
             <table class="contentTable">
               <tr>
@@ -48,6 +48,7 @@ $result = mysqli_query($con,$query);
                 <td>Protein (/100g)</td>
                 <td>Edit</td>
                 <td>Delete</td>
+                <td>Add to Today</td>
               </tr>
               <tr>
                 <?php 
@@ -61,7 +62,10 @@ $result = mysqli_query($con,$query);
                   <td><?php echo $row['protein']; ?></td>
                   <td><a href="/MainPage/Edit/EditPage.php?id=<?php echo $row['food_id']; ?>">Edit</a></td>
                   <td><a onclick="return confirm('Are you sure you would like to delete <?php echo $row['food_item']; ?> ')" href="/PHPDependable/delete_item.php?id=<?php echo $row['food_id']; ?>">Delete</a></td>
+                  <td><a href="">Add</a></td>
                 </tr>
+                
+                
                   <?php
                 }
                 ?>

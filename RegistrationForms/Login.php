@@ -42,7 +42,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     <link rel="stylesheet" href="regLog.css" />
   </head>
   <body>
-    <script src="regLog.js"></script>
     <div class="siteWrapper">
       <div class="topHeader"><p>Diet Buddy</p></div>
       <div class="mainContent">
