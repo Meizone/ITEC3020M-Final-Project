@@ -1,0 +1,123 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.contentTable {
+  margin: 20px;
+  width: 90%;
+  border: 1px solid gray;
+}
+
+.contentTable tr td {
+  border: 1px solid gray;
+}
+
+.siteWrap {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.siteWrap {
+  display: flex;
+}
+
+.sidePanel {
+  height: 90%;
+  width: 20%;
+  margin: left;
+  background-color: #132743;
+}
+
+.rightPanel {
+  height: 90%;
+  width: 80%;
+  margin: right;
+  background-color: white;
+}
+
+.upperSide {
+  height: 10%;
+  width: 100%;
+  font-size: 35px;
+  color: white;
+  justify-content: center;
+  margin-top: 30px;
+  display: flex;
+}
+
+.lowerSide {
+  height: 90%;
+  width: 100%;
+}
+
+.navBar {
+  list-style-type: none;
+  font-size: 25px;
+  margin-top: 50px;
+  padding-left: 0%;
+}
+
+.navBar a {
+  text-decoration: none;
+  margin: 0px;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.navBar a li {
+  margin-bottom: 30px;
+  border-left-style: solid;
+  border-left-width: 3.1px;
+  padding-left: 10%;
+  border-color: #132743;
+  color: #6e798a;
+}
+
+.navBar a li:hover {
+  width: fit-content;
+  cursor: pointer;
+  border-color: yellow;
+  color: white;
+}
+
+.upper {
+  display: flex;
+  background-color: white;
+  height: 5%;
+  width: 97%;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+
+.mainContent {
+}
+
+.UserLoc {
+  display: flex;
+  align-items: center;
+  margin-left: 2%;
+  font-size: larger;
+  float: right;
+  width: 50%;
+}
+
+.Logout {
+  width: 100%;
+  font-size: larger;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  margin-right: 10px;
+}
+
+.Logout:hover {
+  width: fit-content;
+  cursor: pointer;
+  color: gray;
+}

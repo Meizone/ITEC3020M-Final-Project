@@ -1,0 +1,58 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.siteWrapper {
+  height: 100vh;
+  width: 100vw;
+}
+
+.topHeader {
+  background-color: #132743;
+  height: 10%;
+  width: 100%;
+}
+
+.topHeader p {
+  display: flex;
+  margin: 0%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 20%;
+  font-size: 50px;
+  color: white;
+}
+
+.mainContent {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  height: 50%;
+  width: 100%;
+}
+
+.usernameField {
+  width: 100%;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+.passwordField {
+  width: 100%;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+.submitBtn {
+  width: 100px;
+  height: 20px;
+  box-sizing: border-box;
+}
