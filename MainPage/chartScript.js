@@ -1,74 +1,68 @@
-// Load Charts and the corechart package.
-google.charts.load("current", { packages: ["corechart"] });
+document.addEventListener("DOMContentLoaded", (event) => {
+  var fat_data = JSON.parse(document.getElementById("fat_data").value);
+  var carb_data = JSON.parse(document.getElementById("carb_data").value);
+  var protein_data = JSON.parse(document.getElementById("protein_data").value);
 
-google.charts.setOnLoadCallback(drawFatChart);
+  // Load Charts and the corechart package.
+  google.charts.load("current", { packages: ["corechart"] });
 
-google.charts.setOnLoadCallback(drawCarbChart);
+  google.charts.setOnLoadCallback(drawFatChart);
 
-google.charts.setOnLoadCallback(drawProteinChart);
+  google.charts.setOnLoadCallback(drawCarbChart);
 
-function drawFatChart() {
-  var data = new google.visualization.DataTable();
-  data.addColumn("string", "Topping");
-  data.addColumn("number", "Slices");
-  data.addRows([
-    ["Mushrooms", 1],
-    ["Onions", 1],
-    ["Olives", 2],
-    ["Zucchini", 2],
-    ["Pepperoni", 1],
-  ]);
+  google.charts.setOnLoadCallback(drawProteinChart);
 
-  var options = {
-    title: "How Much Pizza Sarah Ate Last Night",
-  };
+  function drawFatChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn("string", "Food Item");
+    data.addColumn("number", "Fat% per");
+    var format_fat = fat_data.map((item) => [item[0], parseFloat(item[1])]);
+    data.addRows(format_fat);
 
-  var chart = new google.visualization.PieChart(
-    document.getElementById("fatChart")
-  );
-  chart.draw(data, options);
-}
+    var options = {
+      title: "Fat Breakdown",
+    };
 
-function drawCarbChart() {
-  var data = new google.visualization.DataTable();
-  data.addColumn("string", "Topping");
-  data.addColumn("number", "Slices");
-  data.addRows([
-    ["Mushrooms", 2],
-    ["Onions", 2],
-    ["Olives", 2],
-    ["Zucchini", 0],
-    ["Pepperoni", 3],
-  ]);
+    var chart = new google.visualization.PieChart(
+      document.getElementById("fatChart")
+    );
+    chart.draw(data, options);
+  }
 
-  var options = {
-    title: "Carbohydrate Chart",
-  };
+  function drawCarbChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn("string", "Food Item");
+    data.addColumn("number", "Slices");
+    var format_carb = carb_data.map((item) => [item[0], parseFloat(item[1])]);
+    data.addRows(format_carb);
 
-  var chart = new google.visualization.PieChart(
-    document.getElementById("carbChart")
-  );
-  chart.draw(data, options);
-}
+    var options = {
+      title: "Carbohydrate Breakdown",
+    };
 
-function drawProteinChart() {
-  var data = new google.visualization.DataTable();
-  data.addColumn("string", "Topping");
-  data.addColumn("number", "Slices");
-  data.addRows([
-    ["Mushrooms", 1],
-    ["Onions", 1],
-    ["Olives", 2],
-    ["Zucchini", 2],
-    ["Pepperoni", 1],
-  ]);
+    var chart = new google.visualization.PieChart(
+      document.getElementById("carbChart")
+    );
+    chart.draw(data, options);
+  }
 
-  var options = {
-    title: "How Much Pizza Sarah Ate Last Night",
-  };
+  function drawProteinChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn("string", "Food Item");
+    data.addColumn("number", "Slices");
+    var format_protein = protein_data.map((item) => [
+      item[0],
+      parseFloat(item[1]),
+    ]);
+    data.addRows(format_protein);
 
-  var chart = new google.visualization.PieChart(
-    document.getElementById("proteinChart")
-  );
-  chart.draw(data, options);
-}
+    var options = {
+      title: "Protein Breakdown",
+    };
+
+    var chart = new google.visualization.PieChart(
+      document.getElementById("proteinChart")
+    );
+    chart.draw(data, options);
+  }
+});

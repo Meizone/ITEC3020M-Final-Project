@@ -7,6 +7,23 @@ include($_SERVER['DOCUMENT_ROOT'].'/PHPDependable/functions.php');
 
 $user_data = check_login($con);
 
+$id = $_SESSION['user_id'];
+$query = "select count(*) from food_db, chart_db where '$id' = chart_db.user_id and food_db.food_id = chart_db.food_id";
+$length = mysqli_query($con,$query);
+
+$query = "select food_db.* from food_db, chart_db where '$id' = chart_db.user_id and food_db.food_id = chart_db.food_id";
+$result = mysqli_query($con,$query);
+
+$a_f = array();
+$a_c = array();
+$a_p = array();
+
+while($row = mysqli_fetch_assoc($result)) 
+{
+  array_push($a_f,array($row['food_item'], $row['fat']));
+  array_push($a_c,array($row['food_item'], $row['carb']));
+  array_push($a_p,array($row['food_item'], $row['protein']));
+}
 ?>
 
 
@@ -20,9 +37,17 @@ $user_data = check_login($con);
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript"></script>
     <script src="chartScript.js"></script>
+
+
   </head>
   <body>
     <div>
+<input type="hidden" id="fat_data" name="fat_data" value='<?php echo json_encode($a_f);?>';>
+<input type="hidden" id="carb_data" name="carb_data" value='<?php echo json_encode($a_c);?>';>
+<input type="hidden" id="protein_data" name="protein_data" value='<?php echo json_encode($a_p);?>';>
+
+
+
       <div class="siteWrap">
         <div class="sidePanel">
           <div class="upperSide">Diet Buddy</div>
