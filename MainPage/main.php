@@ -37,17 +37,12 @@ while($row = mysqli_fetch_assoc($result))
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript"></script>
     <script src="chartScript.js"></script>
-
-
   </head>
   <body>
     <div>
 <input type="hidden" id="fat_data" name="fat_data" value='<?php echo json_encode($a_f);?>';>
 <input type="hidden" id="carb_data" name="carb_data" value='<?php echo json_encode($a_c);?>';>
 <input type="hidden" id="protein_data" name="protein_data" value='<?php echo json_encode($a_p);?>';>
-
-
-
       <div class="siteWrap">
         <div class="sidePanel">
           <div class="upperSide">Diet Buddy</div>
@@ -70,19 +65,48 @@ while($row = mysqli_fetch_assoc($result))
             <div class="Logout"><a href="/PHPDependable/Logout.php" id="Logout">Logout</a></div>
           </div>
           <div class="mainContent">
-            <div class="Chart1">
+            <div class="Chart1" id="Chart1">
               <div id="fatChart" style="width: 100%; height: 100%; margin: 5px;"></div>
             </div>
-            <div class="Chart2">
+            <div class="Chart2" id="Chart2">
               <div id="carbChart" style="width: 100%; height: 100%; margin: 5px;"></div>
             </div>
-            <div class="Chart3">
+            <div class="Chart3" id="Chart3">
               <div id="proteinChart" style="width: 100%; height: 100%; margin: 5px;"></div>
             </div>
-            <div class="Chart4"></div>
+            <div class="Chart4" id="detail_view">
+            <table class="contentTable">
+              <tr>
+                <td>Food Name</td>
+                <td>Fat (/100g)</td>
+              </tr>
+              <tr>
+                <?php 
+                $result = mysqli_query($con,$query);
+                $totalFat = 0;
+                while($row = mysqli_fetch_assoc($result)) 
+                {
+                  ?>
+                  <td><?php echo $row['food_item']; ?></td>
+                  <td><?php echo $row['fat']; ?></td>
+                  <?php 
+                  $totalFat += $row['fat'];
+                  ?>
+
+                </tr>
+                  <?php
+                }
+                ?>
+                <tr>
+                <td>Total</td>
+                <td><?php echo $totalFat; ?></td>
+                </tr>
+            </table>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </body>
+  <script src="DetailViewChange.js"></script>
 </html>
