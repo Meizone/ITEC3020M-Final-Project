@@ -16,10 +16,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
   ]);
 
   text_fat = "";
+  total_fat = 0;
   format_fat.forEach((item) => {
     text_fat = text_fat.concat("<td>", item[0], "</td>\n");
     text_fat = text_fat.concat("<td>", parseFloat(item[1]), "</td>\n");
     text_fat = text_fat.concat("</tr>");
+    total_fat += item[1];
   });
 
   fat_chart.addEventListener("click", function (e) {
@@ -36,17 +38,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
       .concat(
         `
       </tr>
-        <?php
-      }
-      ?>
+      
       <tr>
-      <td>Total</td>
-      <td>
-      <?php 
-      $query = "select SUM(fat) as fat from food_db, chart_db where '$id' = chart_db.user_id and food_db.food_id = chart_db.food_id";
-      $result = mysqli_query($con, $query); 
-      ?>
-      </td>
+      <td>Total</td> 
+      <td>`
+      )
+      .concat(parseFloat(total_fat))
+      .concat(
+        `
+        </td>
       </tr>
   </table>`
       );

@@ -75,33 +75,7 @@ while($row = mysqli_fetch_assoc($result))
               <div id="proteinChart" style="width: 100%; height: 100%; margin: 5px;"></div>
             </div>
             <div class="Chart4" id="detail_view">
-            <table class="contentTable">
-              <tr>
-                <td>Food Name</td>
-                <td>Fat (/100g)</td>
-              </tr>
-              <tr>
-                <?php 
-                $result = mysqli_query($con,$query);
-                $totalFat = 0;
-                while($row = mysqli_fetch_assoc($result)) 
-                {
-                  ?>
-                  <td><?php echo $row['food_item']; ?></td>
-                  <td><?php echo $row['fat']; ?></td>
-                  <?php 
-                  $totalFat += $row['fat'];
-                  ?>
 
-                </tr>
-                  <?php
-                }
-                ?>
-                <tr>
-                <td>Total</td>
-                <td><?php echo $totalFat; ?></td>
-                </tr>
-            </table>
             </div>
           </div>
         </div>
