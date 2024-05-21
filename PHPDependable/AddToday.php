@@ -2,8 +2,6 @@
 session_start();
 
 include($_SERVER['DOCUMENT_ROOT'].'/PHPDependable/connection.php');
-include($_SERVER['DOCUMENT_ROOT'].'/PHPDependable/functions.php');
-
 
     $food_id = $_GET['id'];
     $user_id = $_SESSION['user_id'];

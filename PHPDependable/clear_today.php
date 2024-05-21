@@ -2,7 +2,6 @@
 session_start();
 
 include($_SERVER['DOCUMENT_ROOT'].'/PHPDependable/connection.php');
-include($_SERVER['DOCUMENT_ROOT'].'/PHPDependable/functions.php');
 
 
 $query = "delete from chart_db";
