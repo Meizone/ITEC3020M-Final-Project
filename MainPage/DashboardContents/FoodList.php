@@ -68,12 +68,24 @@ $result = mysqli_query($con,$query);
                   <td><a onclick="return confirm('Are you sure you would like to delete <?php echo $row['food_item']; ?> ')" href="/PHPDependable/delete_item.php?id=<?php echo $row['food_id']; ?>">Delete</a></td>
                   <td><a href="/PHPDependable/AddToday.php?id=<?php echo $row['food_id']; ?>">Add</a></td>
                 </tr>
-
                   <?php
                 }
                 ?>
-              
             </table>
+            <div class="Feedback_Layer">
+              <script type="text/JavaScript">
+                var itemAdded = localStorage.getItem("Item");
+
+                console.log(itemAdded);
+                if(itemAdded)
+                {
+                  var layer = document.querySelector('.Feedback_Layer');
+                  var paragraph = document.createElement('p');
+                  paragraph.textContent = "Item Successfully Added: " + itemAdded;
+                  layer.appendChild(paragraph);
+                }
+              </script>
+            </div>
           </div>
         </div>
       </div>

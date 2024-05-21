@@ -135,3 +135,15 @@ body {
   cursor: pointer;
   color: blue;
 }
+
+.mainContent {
+  height: 80%;
+}
+
+.Feedback_Layer {
+  display: flex;
+  height: 10%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}

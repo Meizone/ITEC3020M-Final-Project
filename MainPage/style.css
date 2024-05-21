@@ -140,6 +140,7 @@ body {
   grid-area: c4;
   border-radius: 10px;
   border-color: black;
+  overflow-y: scroll;
 }
 
 .UserLoc {
@@ -164,4 +165,19 @@ body {
 .Logout a:hover {
   cursor: pointer;
   color: blue;
+}
+
+.table {
+  margin: 10px;
+  align-items: center;
+}
+
+.contentTable {
+  margin: 20px;
+  width: 90%;
+  border: 1px solid gray;
+}
+
+.contentTable tr td {
+  border: 1px solid gray;
 }
