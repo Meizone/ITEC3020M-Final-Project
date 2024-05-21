@@ -1,3 +1,45 @@
+function change_detail(detail, formatted_data, type) {
+  text_data = "";
+  total_data = 0;
+  formatted_data.forEach((item) => {
+    text_data = text_data.concat("<td>", item[0], "</td>\n");
+    text_data = text_data.concat("<td>", parseFloat(item[1]), "</td>\n");
+    text_data = text_data.concat("</tr>");
+    total_data += item[1];
+  });
+
+  //Singular Worst line of code in my life
+  detail.innerHTML = `<table class="contentTable">
+    <tr>
+      <td>Food Name</td>
+      <td>`
+    .concat(type)
+    .concat(
+      `(/100g)</td>
+    </tr>
+    <tr>
+
+        <tr>
+        `
+    )
+    .concat(text_data)
+    .concat(
+      `
+      </tr>
+      
+      <tr>
+      <td>Total</td> 
+      <td>`
+    )
+    .concat(parseFloat(Math.round(total_data * 100) / 100))
+    .concat(
+      `
+        </td>
+      </tr>
+  </table>`
+    );
+}
+
 document.addEventListener("DOMContentLoaded", (event) => {
   var fat_chart = document.getElementById("Chart1");
   var carb_chart = document.getElementById("Chart2");
@@ -15,44 +57,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
     parseFloat(item[1]),
   ]);
 
-  text_fat = "";
-  total_fat = 0;
-  format_fat.forEach((item) => {
-    text_fat = text_fat.concat("<td>", item[0], "</td>\n");
-    text_fat = text_fat.concat("<td>", parseFloat(item[1]), "</td>\n");
-    text_fat = text_fat.concat("</tr>");
-    total_fat += item[1];
-  });
-
   fat_chart.addEventListener("click", function (e) {
-    detail.innerHTML = `<table class="contentTable">
-    <tr>
-      <td>Food Name</td>
-      <td>Fat (/100g)</td>
-    </tr>
-    <tr>
-
-        <tr>
-        `
-      .concat(text_fat)
-      .concat(
-        `
-      </tr>
-      
-      <tr>
-      <td>Total</td> 
-      <td>`
-      )
-      .concat(parseFloat(total_fat))
-      .concat(
-        `
-        </td>
-      </tr>
-  </table>`
-      );
+    change_detail(detail, format_fat, "Fat");
   });
 
-  carb_chart.addEventListener("click", function (e) {});
+  carb_chart.addEventListener("click", function (e) {
+    change_detail(detail, format_carb, "Carbohydrate");
+  });
 
-  protein_chart.addEventListener("click", function (e) {});
+  protein_chart.addEventListener("click", function (e) {
+    change_detail(detail, format_protein, "Protein");
+  });
 });
