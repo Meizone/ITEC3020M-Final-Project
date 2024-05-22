@@ -75,7 +75,7 @@ while($row = mysqli_fetch_assoc($result))
               <div id="proteinChart" style="width: 100%; height: 100%; margin: 5px;"></div>
             </div>
             <div class="Chart4" id="detail_view">
-              Click on any of the charts to view detailed data
+              <div style="display: flex; justify-content: center; align-items: center;">Click on any of the charts to view detailed data</div>
             </div>
           </div>
         </div>
