@@ -26,7 +26,7 @@ body {
 }
 
 .upperSide {
-  height: 10%;
+  height: 20%;
   width: 100%;
   font-size: 35px;
   color: white;
@@ -180,4 +180,13 @@ body {
 
 .contentTable tr td {
   border: 1px solid gray;
+}
+
+.breakdown {
+  width: 100%;
+  font-size: 35px;
+  color: black;
+  justify-content: center;
+  margin-top: 30px;
+  display: flex;
 }

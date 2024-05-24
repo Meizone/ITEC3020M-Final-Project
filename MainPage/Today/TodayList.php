@@ -23,7 +23,9 @@ $result = mysqli_query($con,$query);
     <div>
       <div class="siteWrap">
         <div class="sidePanel">
-          <div class="upperSide">Diet Buddy</div>
+          <div class="upperSide">
+          <img src="/Logo/Logo.PNG" alt="Logo Image">
+          </div>
           <div class="lowerSide">
             <ul class="navBar">
               <a href="/MainPage/main.php"><li>Chart</li></a>

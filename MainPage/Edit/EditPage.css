@@ -36,10 +36,10 @@ body {
 }
 
 .upperSide {
-  height: 10%;
+  height: 20%;
   width: 100%;
   font-size: 35px;
-  color: gray;
+  color: white;
   justify-content: center;
   margin-top: 30px;
   display: flex;

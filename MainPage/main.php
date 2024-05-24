@@ -45,7 +45,9 @@ while($row = mysqli_fetch_assoc($result))
 <input type="hidden" id="protein_data" name="protein_data" value='<?php echo json_encode($a_p);?>';>
       <div class="siteWrap">
         <div class="sidePanel">
-          <div class="upperSide">Diet Buddy</div>
+          <div class="upperSide">
+            <img src="/Logo/Logo.PNG" alt="Logo Image">
+          </div>
           <div class="lowerSide">
             <ul class="navBar">
               <a href="/MainPage/main.php"><li style="color: white;">Chart</li></a>

@@ -9,10 +9,15 @@ function change_detail(detail, formatted_data, type) {
   });
 
   //Singular Worst line of code in my life
-  detail.innerHTML = `<table class="contentTable">
+  detail.innerHTML = `<div class="breakdown">`
+    .concat(type)
+    .concat(
+      ` Breakdown</div>
+  <table class="contentTable">
     <tr>
       <td>Food Name</td>
       <td>`
+    )
     .concat(type)
     .concat(
       `(/100g)</td>
