@@ -12,7 +12,7 @@ Functionality with Internal Databases
 
 
 Database Structures:
-"User" - id, user_id, password, date
-"food_db" - food_id, food_item, fat, carb, protein
-"chart_db" - user_id*, food_id*
-chart_db is associative
+- "User" - id, user_id, password, date
+- "food_db" - food_id, food_item, fat, carb, protein
+- "chart_db" - user_id*, food_id*
+  - chart_db is associative
